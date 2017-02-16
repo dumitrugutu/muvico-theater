@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :movies do
     resources :purchases, only: [:new, :create]
   end
+
+  resources :auditoria
 end
