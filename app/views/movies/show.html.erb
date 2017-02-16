@@ -8,7 +8,7 @@
     <div class="media-body">
       <h4 class="media-heading"><%= @movie.title %></h4>
       <%= @movie.start_time.strftime("%I:%m %p  %b/%d/%Y") %>
-      <%= link_to "Buy ticket" %>
+      <%= link_to "Buy ticket", new_movie_purchase_path(@movie) %>
     </div>
   </div>
 </div>
