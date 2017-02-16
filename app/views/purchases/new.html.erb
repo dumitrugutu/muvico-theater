@@ -4,6 +4,18 @@
   <div class="col-md-12">
     <%= form_for([@movie, @movie.purchases.build], :html => { class: "form-horizontal", role: "form"}) do |f| %>
       <div class="form-group">
+        <div class="col-md-6">
+          <% if @purchase.errors.any? %>
+            <h3><%= pluralize(@purchase.errors.count, "error") %> prevented you from buying this movie: </h3>
+            <% @purchase.errors.full_messages.each do |error| %>
+              <ul>
+                <li><%= error %></li>
+              </ul>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="form-group">
         <div class="control-label col-sm-3">
           <%= f.label "Name: " %>
         </div>
@@ -37,7 +49,7 @@
 
       <div class="form-group">
         <div class="col-md-9 col-sm-9">
-          <%= f.submit "Buy", class: "btn btn-primary btn-lg pull-right" %>
+          <%= f.submit "Buy", class: "btn btn-primary btn-md pull-right" %>
         </div>
       </div>
     <% end %>
