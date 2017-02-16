@@ -9,10 +9,11 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    movie = Movie.find(params[:movie_id])
-    purchase = Purchase.new(purchase_params)
-    purchase.movie_id = movie.id
-    if purchase.save
+    @movie = Movie.find(params[:movie_id])
+    @purchase = Purchase.new(purchase_params)
+    @purchase.movie_id = @movie.id
+    if @purchase.save
+      flash[:success] = "You have purchased the movie #{movie.title} successfully"
       redirect_to root_path
     else
       render :new
