@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-movies = Movie.create!([{ title: "Star Wars", description: "Something about Star Wars", start_time: Faker::Time.forward(4, :morning) }, { title: "Lord of the Rings", description: "Something about Lord of the Rings", start_time: Faker::Time.forward(5, :morning)  }, {title: "True Grit", description: "Something about True Grit", start_time: Faker::Time.forward(6, :morning) }])
+movies = Movie.create!([{ title: "Star Wars", description: "Something about Star Wars", start_time: Faker::Time.forward(4, :morning), price: 9.95 }, { title: "Lord of the Rings", description: "Something about Lord of the Rings", start_time: Faker::Time.forward(5, :morning), price: 10.00  }, {title: "True Grit", description: "Something about True Grit", start_time: Faker::Time.forward(6, :morning), price: 8.50 }])
