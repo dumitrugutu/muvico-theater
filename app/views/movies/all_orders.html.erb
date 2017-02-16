@@ -1,0 +1,26 @@
+<h1 class="text-center">Orders for <%= @movie.title %></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <% @purchases.each do |purchase| %>
+          <tbody>
+            <tr>
+              <td><%= purchase.name %></td>
+              <td><%= purchase.email %></td>
+              <td><%= purchase.created_at.strftime("%l:%S %p %m/%d/%Y") %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
