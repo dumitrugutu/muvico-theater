@@ -1,4 +1,8 @@
 class PurchasesController < ApplicationController
+  def index
+    @purchases = Purchase.all
+  end
+
   def new
     @movie = Movie.find(params[:movie_id])
     @purchase = Purchase.new
