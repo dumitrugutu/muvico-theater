@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+User stories:
 
-Things you may want to cover:
+1. Customers should be able to come to the site and see all movies playing with their showtimes.
 
-* Ruby version
+2. Seating is limited for each theater so a particular showtime should only have a limited number of seats
 
-* System dependencies
+3. Once a show sells out, a customer should no longer be able to buy tickets
 
-* Configuration
+4. Customers should only be able to buy one ticket at a time
 
-* Database creation
+5. The customer should be able to checkout by entering their name, email, credit card, and expiration date
 
-* Database initialization
+6. The customer should see if any errors occur when ordering a ticket
 
-* How to run the test suite
+7. The customer purchases their tickets, they should receive an email receipt
 
-* Services (job queues, cache servers, search engines, etc.)
+Owner stories:
 
-* Deployment instructions
+1. The owner should be able to manage the movies playing and seating capacities
 
-* ...
+  * She should be able to add auditoriums and seating capacities
+
+  * should be able to set which movie is showing in which auditorium
+
+2. The owner should be able to track all the sales
+
+  * She should be able to see a list of all orders
+
+  * She should be able to see a list of orders for each movie
