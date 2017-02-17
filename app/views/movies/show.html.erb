@@ -5,10 +5,11 @@
     <div class="col-md-6 col-md-offset-2">
       <div class="media">
         <div class="media-left media-middle">
-          <img class="media-object" src="http://placehold.it/200x150" alt="<%= @movie.title %>">
+          <img class="media-object" src="http://placehold.it/200x250" alt="<%= @movie.title %>">
         </div>
         <div class="media-body">
           <h4 class="media-heading"><%= @movie.title %></h4>
+          <p><%= @movie.description %></p>
           <%= @movie.start_time.strftime("%I:%m %p  %b/%d/%Y") %> |
           <%= link_to "Buy ticket", new_movie_purchase_path(@movie) %> |
           <%= link_to "All purchases", show_movie_orders_path(@movie) %>

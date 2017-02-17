@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216211746) do
+ActiveRecord::Schema.define(version: 20170217205345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20170216211746) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_purchases_on_movie_id", using: :btree
+  end
+
+  create_table "screenings", force: :cascade do |t|
+    t.integer  "movie_id"
+    t.integer  "auditorium_id"
+    t.datetime "start_time"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["auditorium_id"], name: "index_screenings_on_auditorium_id", using: :btree
+    t.index ["movie_id"], name: "index_screenings_on_movie_id", using: :btree
   end
 
 end
