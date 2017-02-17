@@ -1,0 +1,17 @@
+<h1 class="text-center">Now Playing</h1>
+
+<% @screenings.each do |screening| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2><%= screening.auditorium.name %></h2>
+
+        <div class="jumbotron">
+          <h3><%= screening.movie.title %></h3>
+          <p><%= truncate(screening.movie.description, length: 250) %></p><span>Showtime: <%= screening.start_time.strftime("%I:%m %p") %></span>
+          <%= link_to "Details", movie_path(screening.movie), class: "btn btn-primary btn-sm", role: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
