@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "movies#index"
+  root "screenings#index"
 
   get "purchases/index" => "purchases#index", as: "show_all_sales"
   get "movies/:id/all_orders" => "movies#all_orders", as: "show_movie_orders"
