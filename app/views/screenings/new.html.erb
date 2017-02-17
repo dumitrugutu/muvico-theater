@@ -1,0 +1,42 @@
+<h1 class="text-center">Add Screening</h1>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@screening, :html => { class: "form-horizontal", role: "form"}) do |f| %>
+      <% if @screening.errors.any? %>
+        <h3><%= pluralize(@screening.errors.count, "error") %> prevented this screening from being created: </h3>
+        <% @screening.errors.full_messages.each do |error| %>
+          <ul>
+            <li><%= error %></li>
+          </ul>
+        <% end %>
+      <% end %>
+      <div class="form-group">
+        <div class="control-label col-md-3 col-md-offset-3 col-sm-1 col-sm-offset-3">
+          <%= f.label "Select movie: " %>
+          <select name="screening[movie_id]">
+            <% @movies.each do |movie| %>
+              <option value="<%= movie.id %>"><%= movie.title %></option>
+            <% end %>
+          </select>
+        </div>
+
+        <div class="control-label col-md-3 col-sm-1">
+          <%= f.label "Select auditorium: " %>
+          <select name="screening[auditorium_id]">
+            <% @auditoria.each do |auditorium| %>
+              <option value="<%= auditorium.id %>"><%= auditorium.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 col-sm-6 col-md-offset-3">
+          <%= f.submit "Save", class: "btn btn-primary btn-md pull-right" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
