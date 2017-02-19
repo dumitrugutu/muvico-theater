@@ -15,20 +15,22 @@
       <div class="form-group">
         <div class="control-label col-md-3 col-md-offset-1 col-sm-1 col-sm-offset-1">
           <%= f.label "Select movie: " %>
-          <select name="screening[movie_id]">
+          <%= f.collection_select(:movie_id, @movies, :id, :title) %>
+          <!-- <select name="screening[movie_id]">
             <% @movies.each do |movie| %>
               <option value="<%= movie.id %>"><%= movie.title %></option>
             <% end %>
-          </select>
+          </select> -->
         </div>
 
         <div class="control-label col-md-3 col-sm-1">
           <%= f.label "Select auditorium: " %>
-          <select name="screening[auditorium_id]">
+          <%= f.collection_select(:auditorium_id, @auditoria, :id, :name) %>
+          <!-- <select name="screening[auditorium_id]">
             <% @auditoria.each do |auditorium| %>
               <option value="<%= auditorium.id %>"><%= auditorium.name %></option>
             <% end %>
-          </select>
+          </select> -->
         </div>
 
         <div class="control-label col-md-3 col-sm-1">
