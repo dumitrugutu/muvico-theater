@@ -5,6 +5,7 @@ class Screening < ApplicationRecord
 
   belongs_to :movie
   belongs_to :auditorium
+  has_many :purchases, through: :movie
 
   private
     def screening_exists?

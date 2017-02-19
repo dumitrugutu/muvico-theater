@@ -2,17 +2,18 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
       <div class="media">
         <div class="media-left media-middle">
-          <img class="media-object" src="http://placehold.it/200x250" alt="<%= @movie.title %>">
+          <img class="media-object" src="https://placehold.it/200x250" alt="<%= @movie.title %>">
         </div>
         <div class="media-body">
           <h4 class="media-heading"><%= @movie.title %></h4>
           <p><%= @movie.description %></p>
-          <%= @movie.start_time.strftime("%I:%m %p  %b/%d/%Y") %> |
+          <span>Showtime: <%= @movie.start_time.strftime("%I:%m %p  %b/%d/%Y") %></span> |
           <%= link_to "Buy ticket", new_movie_purchase_path(@movie), class: "btn btn-warning btn-sm", role: "button" %> |
-          <%= link_to "All purchases", show_movie_orders_path(@movie), class: "btn btn-warning btn-sm", role: "button" %>
+          <%= link_to "All purchases", show_movie_orders_path(@movie), class: "btn btn-warning btn-sm", role: "button" %> |
+          <span class="badge">Available tickets: <%= @movie.available_tickets %></span>
         </div>
       </div>
     </div>
