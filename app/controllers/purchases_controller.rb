@@ -13,6 +13,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     @purchase.movie_id = @movie.id
     if @purchase.save
+      PurchaseMailer.notify_customer(@purchase).deliver_later
       flash[:notice] = "You have purchased a ticket to #{@movie.title} successfully"
       redirect_to root_path
     else
