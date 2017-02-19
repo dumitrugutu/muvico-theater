@@ -3,4 +3,5 @@ class Movie < ApplicationRecord
 
   has_many :purchases
   has_many :screenings
+  has_many :auditoria
 end

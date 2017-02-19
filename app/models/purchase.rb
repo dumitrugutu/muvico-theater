@@ -7,7 +7,7 @@ class Purchase < ApplicationRecord
   validate :customer_bought_ticket?
 
   belongs_to :movie
-
+  
   private
     def customer_bought_ticket?
       self.email = email
