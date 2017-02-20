@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :purchases, only: [:new, :create]
   end
 
-  resources :auditoria, only: [:new, :create]
-  resources :screenings, only: [:new, :create]
+  resources :auditoria #, only: [:new, :create]
+  resources :screenings #, only: [:new, :create]
 end
