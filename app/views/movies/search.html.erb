@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+      <% if @movie %>
+        <div class="media">
+          <div class="media-left media-middle">
+            <img class="media-object" src="http://placehold.it/200x150" alt="<%= @movie.title %>">
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= link_to @movie.title, movie_path(@movie) %></h4>
+            <p><%= @movie.description %></p>
+            <span>Showtime: <%= @movie.start_time.strftime("%I:%m %p  %b/%d/%Y") %></span>
+          </div>
+        </div>
+      <% else %>
+        <h3 class="text-center">We didn't find any movie with the title '<%= @movie_query %>'</h3>
+      <% end %>
+    </div>
+  </div>
+</div>
