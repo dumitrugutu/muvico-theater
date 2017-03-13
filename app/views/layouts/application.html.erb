@@ -17,11 +17,11 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <form class="navbar-form navbar-left">
+          <form class="navbar-form navbar-left" action="movies/search" method="GET">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search movies">
+              <input type="text" name="movie" class="form-control" placeholder="Search movies">
             </div>
-            <button type="submit" class="btn btn-default">Search movies</button>
+            <button type="submit" class="btn btn-default">Search</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "All movies", movies_path %></li>

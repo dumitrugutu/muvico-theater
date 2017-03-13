@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "purchases/index" => "purchases#index", as: "show_all_sales"
   get "movies/:id/all_orders" => "movies#all_orders", as: "show_movie_orders"
-
+  get "movies/search" => "movies#search"
 
   resources :movies do
     resources :purchases, only: [:new, :create]
